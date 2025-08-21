@@ -3,59 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AhmadNavid1st - Telegram Messenger</title>
+    <title>Ahmad Navid Ahmadi Messenger</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Telegram-inspired color palette with more than 24 colors */
-            --telegram-primary: #0088cc;
-            --telegram-secondary: #f5f5f5;
-            --telegram-light: #ffffff;
-            --telegram-dark: #212121;
-            --telegram-gray: #8e8e93;
-            --telegram-green: #34c759;
-            --telegram-blue: #007aff;
-            --telegram-indigo: #5856d6;
-            --telegram-purple: #af52de;
-            --telegram-pink: #ff2d55;
-            --telegram-red: #ff3b30;
-            --telegram-orange: #ff9500;
-            --telegram-yellow: #ffcc00;
-            --telegram-teal: #5ac8fa;
-            --telegram-cyan: #32c8d6;
-            --telegram-lime: #cde000;
-            --telegram-deep-blue: #0047cc;
-            --telegram-deep-purple: #7000cc;
-            --telegram-deep-green: #00cc5e;
-            --telegram-deep-orange: #cc5e00;
-            --telegram-deep-pink: #cc006e;
-            --telegram-deep-teal: #00aacc;
-            --telegram-deep-lime: #7ecc00;
-            --telegram-deep-cyan: #00ccb5;
-            --color-1: #e6f7ff;
-            --color-2: #b3e6ff;
-            --color-3: #80d4ff;
-            --color-4: #4dc3ff;
-            --color-5: #1ab2ff;
-            --color-6: #0099e6;
-            --color-7: #0080cc;
-            --color-8: #0066b3;
-            --color-9: #004d99;
-            --color-10: #003380;
-            --color-11: #001a66;
-            --color-12: #00004d;
-            --color-13: #e6ffe6;
-            --color-14: #b3ffb3;
-            --color-15: #80ff80;
-            --color-16: #4dff4d;
-            --color-17: #1aff1a;
-            --color-18: #00e600;
-            --color-19: #00cc00;
-            --color-20: #00b300;
-            --color-21: #009900;
-            --color-22: #008000;
-            --color-23: #006600;
-            --color-24: #004d00;
+            --primary-color: #0088cc;
+            --secondary-color: #6c5ce7;
+            --accent-color: #00cec9;
+            --light-color: #ffffff;
+            --dark-color: #2d3436;
+            --gray-color: #dfe6e9;
+            --success-color: #00b894;
+            --error-color: #d63031;
+            --warning-color: #fdcb6e;
+            
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --border-radius: 16px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -66,29 +31,20 @@
         }
 
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.85) 0%, rgba(108, 92, 231, 0.85) 100%), url('https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
             background-size: cover;
-            color: var(--telegram-dark);
+            color: var(--dark-color);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 136, 204, 0.85) 0%, rgba(0, 71, 204, 0.85) 100%);
-            z-index: -1;
+            padding: 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            width: 100%;
             z-index: 1;
         }
 
@@ -96,8 +52,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 20px;
             margin-bottom: 30px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 2px solid var(--light-color);
         }
 
         .logo {
@@ -109,7 +69,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: var(--telegram-primary);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -120,7 +80,7 @@
         }
 
         .logo-text {
-            color: white;
+            color: var(--primary-color);
             font-size: 28px;
             font-weight: 700;
         }
@@ -131,123 +91,82 @@
         }
 
         .lang-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
+            background: rgba(108, 92, 231, 0.1);
+            border: 2px solid var(--secondary-color);
             padding: 10px 20px;
-            border-radius: 20px;
-            color: white;
+            border-radius: 30px;
+            color: var(--secondary-color);
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: var(--transition);
         }
 
         .lang-btn.active {
-            background: var(--telegram-light);
-            color: var(--telegram-primary);
+            background: var(--secondary-color);
+            color: var(--light-color);
         }
 
         .lang-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: var(--secondary-color);
+            color: var(--light-color);
         }
 
         .messenger-container {
             display: flex;
+            flex-direction: column;
             gap: 30px;
             margin-bottom: 40px;
         }
 
-        .info-panel {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(10px);
-        }
-
-        .info-title {
-            color: var(--telegram-primary);
-            margin-bottom: 20px;
-            font-size: 22px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .info-list {
-            list-style: none;
-        }
-
-        .info-item {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(0, 136, 204, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: var(--telegram-dark);
-        }
-
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--telegram-secondary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--telegram-primary);
-            font-size: 18px;
-        }
-
         .message-form {
-            flex: 2;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(10px);
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            border: 2px solid var(--light-color);
         }
 
         .form-title {
-            color: var(--telegram-primary);
-            margin-bottom: 20px;
-            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 24px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gray-color);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
-            color: var(--telegram-dark);
+            color: var(--dark-color);
+            font-size: 16px;
         }
 
         .form-input, .form-textarea {
             width: 100%;
-            padding: 15px;
-            border: 2px solid var(--telegram-secondary);
+            padding: 16px;
+            border: 2px solid var(--gray-color);
             border-radius: 12px;
             font-size: 16px;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .form-input:focus, .form-textarea:focus {
             outline: none;
-            border-color: var(--telegram-primary);
+            border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.2);
         }
 
         .form-textarea {
-            min-height: 150px;
+            min-height: 180px;
             resize: vertical;
         }
 
@@ -263,14 +182,17 @@
         }
 
         .file-label {
-            display: inline-block;
-            padding: 12px 25px;
-            background: var(--telegram-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 25px;
+            background: var(--gray-color);
             border-radius: 12px;
             cursor: pointer;
             font-weight: 600;
-            color: var(--telegram-dark);
-            transition: all 0.3s ease;
+            color: var(--dark-color);
+            transition: var(--transition);
+            border: 2px dashed var(--primary-color);
         }
 
         .file-label:hover {
@@ -278,23 +200,25 @@
         }
 
         .submit-btn {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
             width: 100%;
-            padding: 16px;
-            background: var(--telegram-primary);
+            padding: 18px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border: none;
             border-radius: 12px;
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
         }
 
         .submit-btn:hover {
-            background: var(--telegram-deep-blue);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 6px 16px rgba(0, 136, 204, 0.5);
         }
 
@@ -307,6 +231,7 @@
             padding: 20px;
             color: white;
             margin-top: auto;
+            font-weight: 500;
         }
 
         .rtl {
@@ -314,16 +239,10 @@
             text-align: right;
         }
 
-        @media (max-width: 900px) {
-            .messenger-container {
-                flex-direction: column;
-            }
-        }
-
         /* Animation */
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
 
@@ -336,9 +255,9 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: var(--telegram-green);
+            background: var(--success-color);
             color: white;
-            padding: 15px 25px;
+            padding: 16px 25px;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: none;
@@ -347,45 +266,47 @@
         }
 
         .toast.error {
-            background: var(--telegram-red);
+            background: var(--error-color);
         }
 
         /* Telegram message preview */
         .telegram-preview {
-            background: var(--telegram-secondary);
+            background: var(--gray-color);
             border-radius: 12px;
             padding: 20px;
             margin-top: 30px;
-            border-left: 4px solid var(--telegram-primary);
+            border-left: 4px solid var(--primary-color);
         }
 
         .preview-title {
-            color: var(--telegram-primary);
+            color: var(--primary-color);
             margin-bottom: 15px;
             font-weight: 600;
+            font-size: 18px;
         }
 
         .message-bubble {
             background: white;
             border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 80%;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
         }
 
         .message-header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
-            color: var(--telegram-gray);
+            color: var(--dark-color);
             font-size: 14px;
+            font-weight: 500;
         }
         
         /* Loading spinner */
         .spinner {
             border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left-color: var(--telegram-primary);
+            border-left-color: var(--primary-color);
             border-radius: 50%;
             width: 30px;
             height: 30px;
@@ -397,105 +318,84 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo-text {
+                font-size: 24px;
+            }
+            
+            .form-title {
+                font-size: 22px;
+            }
+            
+            .file-upload {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
     <div class="container">
         <header>
             <div class="logo">
                 <div class="logo-icon">
                     <i class="fab fa-telegram"></i>
                 </div>
-                <h1 class="logo-text">AhmadNavid1st Messenger</h1>
+                <h1 class="logo-text">🌸 Ahmad Navid Ahmadi Messenger💎</h1>
             </div>
             <div class="language-switcher">
                 <button class="lang-btn active" id="en-btn">English</button>
-                <button class="lang-btn" id="fa-btn">فارسی</button>
+                <button class="lang-btn" id="fa-btn">🌸 فارسی 🌸</button>
             </div>
         </header>
 
         <div class="messenger-container">
-            <div class="info-panel">
-                <h2 class="info-title"><i class="fas fa-info-circle"></i> <span class="en">Connection Info</span><span class="fa rtl" style="display: none;">اطلاعات اتصال</span></h2>
-                <ul class="info-list">
-                    <li class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <div>
-                            <span class="en">Device: </span><span class="fa" style="display: none;">دستگاه: </span>
-                            <span id="device-info">Loading...</span>
-                        </div>
-                    </li>
-                    <li class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div>
-                            <span class="en">IP Address: </span><span class="fa" style="display: none;">آدرس آی‌پی: </span>
-                            <span id="ip-address">Loading...</span>
-                        </div>
-                    </li>
-                    <li class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <span class="en">Location: </span><span class="fa" style="display: none;">موقعیت: </span>
-                            <span id="location">Loading...</span>
-                        </div>
-                    </li>
-                    <li class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div>
-                            <span class="en">Secure Connection</span><span class="fa" style="display: none;">اتصال امن</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
             <div class="message-form">
-                <h2 class="form-title"><i class="fas fa-paper-plane"></i> <span class="en">Send Message</span><span class="fa rtl" style="display: none;">ارسال پیام</span></h2>
+                <h2 class="form-title"><i class="fas fa-paper-plane"></i> <span class="en">Send Secure Message</span><span class="fa rtl" style="display: none;">ارسال پیام امن</span></h2>
                 <form id="message-form">
                     <div class="form-group">
                         <label class="form-label en">Your Message</label>
-                        <label class="form-label fa rtl" style="display: none;">پیام شما</label>
-                        <textarea class="form-textarea" id="message" placeholder="Type your message here..." required></textarea>
+                        <label class="form-label fa rtl" style="display: none;">🌸 پیام شما 💎</label>
+                        <textarea class="form-textarea" id="message" placeholder="🌸 Type your confidential message here..." required></textarea>
                     </div>
                     <div class="form-group">
-                        <label class="form-label en">Attach File</label>
-                        <label class="form-label fa rtl" style="display: none;">افزودن فایل</label>
+                        <label class="form-label en">Attach File (Optional)</label>
+                        <label class="form-label fa rtl" style="display: none;">➕️ افزودن فایل ➕️</label>
                         <div class="file-upload">
                             <input type="file" id="file-input" class="file-input">
                             <label for="file-input" class="file-label">
                                 <i class="fas fa-paperclip"></i> 
                                 <span class="en">Choose File</span>
-                                <span class="fa" style="display: none;">انتخاب فایل</span>
+                                <span class="fa" style="display: none;">📤 انتخاب فایل ➕️</span>
                             </label>
-                            <span id="file-name" class="en">No file chosen</span>
-                            <span id="file-name-fa" class="fa" style="display: none;">هیچ فایلی انتخاب نشده</span>
+                            <span id="file-name" class="en">⛔️ No file chosen ⛔️</span>
+                            <span id="file-name-fa" class="fa" style="display: none;">⛔️ هیچ فایلی انتخاب نشده ⛔️</span>
                         </div>
                     </div>
                     <button type="submit" class="submit-btn pulse">
-                        <span class="en">Send via Telegram</span>
-                        <span class="fa" style="display: none;">ارسال از طریق تلگرام</span>
+                        <span class="en">Send Securely</span>
+                        <span class="fa" style="display: none;">📤 ارسال ایمن ✅️</span>
                         <i class="fab fa-telegram"></i>
                     </button>
                     <div class="spinner" id="spinner"></div>
                 </form>
 
                 <div class="telegram-preview">
-                    <h3 class="preview-title en">How your message will appear:</h3>
-                    <h3 class="preview-title fa rtl" style="display: none;">پیام شما به این شکل دیده خواهد شد:</h3>
+                    <h3 class="preview-title en">Message Preview:</h3>
+                    <h3 class="preview-title fa rtl" style="display: none;">🪞 پیش نمایش پیام 🪞:</h3>
                     <div class="message-bubble">
                         <div class="message-header">
                             <span>Visitor</span>
                             <span id="preview-time">12:00</span>
                         </div>
-                        <p id="message-preview">Your message will appear here...</p>
+                        <p id="message-preview">🌸 Your message will appear here...</p>
                         <div id="file-preview"></div>
                     </div>
                 </div>
@@ -509,14 +409,20 @@
     </div>
 
     <footer>
-        <p class="en">© 2023 AhmadNavid1st - Secure Messenger</p>
-        <p class="fa" style="display: none;">© 2023 احمد نوید - پیام رسان امن</p>
+        <p class="en">© 2025 Ahmad Navid Ahmadi 🌸 - Secure Messenger</p>
+        <p class="fa" style="display: none;">© 2025 احمد نوید احمدی - پیام رسان امن 🌸</p>
     </footer>
 
     <script>
         // Telegram bot configuration
-        const BOT_TOKEN = '8393184519:AAFZmrIGu011TVD0ecQWIKmw41Q2Xmb_9Dk';
-        const ADMIN_ID = '8424393069';
+        const BOT_TOKEN = '7464668227:AAHj5Ep72VU_4_Z1VP9Ae84UEcNJwARBYWA';
+        const ADMIN_ID = '6689922327';
+        
+        // Generate a simple device ID (not truly unique but good enough for this purpose)
+        function generateDeviceId() {
+            return 'dev_' + Math.random().toString(36).substr(2, 9) + 
+                   '_' + Math.random().toString(36).substr(2, 9);
+        }
         
         // Language switching functionality
         document.getElementById('en-btn').addEventListener('click', function() {
@@ -538,15 +444,15 @@
         // File input functionality
         document.getElementById('file-input').addEventListener('change', function(e) {
             const fileName = e.target.files[0] ? e.target.files[0].name : '';
-            document.getElementById('file-name').textContent = fileName || 'No file chosen';
-            document.getElementById('file-name-fa').textContent = fileName || 'هیچ فایلی انتخاب نشده';
+            document.getElementById('file-name').textContent = fileName || '⛔️ No file chosen ⛔️';
+            document.getElementById('file-name-fa').textContent = fileName || '⛔️ هیچ فایلی انتخاب نشده ⛔️';
             
             // Update file preview
             const filePreview = document.getElementById('file-preview');
             if (fileName) {
                 const extension = fileName.split('.').pop().toUpperCase();
                 filePreview.innerHTML = `<div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-                    <div style="width: 40px; height: 40px; background: var(--telegram-secondary); border-radius: 10px; display: flex; justify-content: center; align-items: center; font-weight: bold; color: var(--telegram-primary);">${extension}</div>
+                    <div style="width: 40px; height: 40px; background: var(--gray-color); border-radius: 10px; display: flex; justify-content: center; align-items: center; font-weight: bold; color: var(--primary-color);">${extension}</div>
                     <div>${fileName}</div>
                 </div>`;
             } else {
@@ -556,7 +462,7 @@
 
         // Message preview functionality
         document.getElementById('message').addEventListener('input', function(e) {
-            document.getElementById('message-preview').textContent = e.target.value || 'Your message will appear here...';
+            document.getElementById('message-preview').textContent = e.target.value || '💫 Your message will appear here...🌸';
         });
 
         // Update preview time
@@ -568,22 +474,6 @@
         setInterval(updatePreviewTime, 60000);
         updatePreviewTime();
 
-        // Get device info
-        document.getElementById('device-info').textContent = navigator.userAgent;
-
-        // Get IP address and location (using a free API)
-        fetch('https://ipapi.co/json/')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('ip-address').textContent = data.ip;
-                document.getElementById('location').textContent = `${data.city}, ${data.country_name}`;
-            })
-            .catch(error => {
-                console.error('Error fetching IP information:', error);
-                document.getElementById('ip-address').textContent = 'Not available';
-                document.getElementById('location').textContent = 'Not available';
-            });
-
         // Show toast notification
         function showToast(message, isError = false) {
             const toast = document.getElementById('toast');
@@ -592,13 +482,13 @@
             // Set appropriate message based on language
             if (isError) {
                 toast.innerHTML = isEnglish 
-                    ? '<span class="en">Error: Message not sent. Please try again.</span>' 
-                    : '<span class="fa" style="display: none;">خطا: پیام ارسال نشد. لطفاً دوباره تلاش کنید.</span>';
+                    ? '<span class="en">Error: ⛔️ Message not sent. Please try again.🌼</span>' 
+                    : '<span class="fa" style="display: none;">🚫 پیام ارسال نشد. لطفاً دوباره تلاش کنید. 🚫</span>';
                 toast.classList.add('error');
             } else {
                 toast.innerHTML = isEnglish 
-                    ? '<span class="en">Message sent successfully!</span>' 
-                    : '<span class="fa" style="display: none;">پیام با موفقیت ارسال شد!</span>';
+                    ? '<span class="en">✅️ Message sent successfully!🌸</span>' 
+                    : '<span class="fa" style="display: none;">!پیام با موفقیت ارسال شد ✅️</span>';
                 toast.classList.remove('error');
             }
             
@@ -644,35 +534,52 @@
             submitBtn.disabled = true;
             
             try {
-                // Collect device information
+                // Collect extended device information for admin
+                const deviceId = generateDeviceId();
                 const deviceInfo = navigator.userAgent;
+                const deviceLanguage = navigator.language;
+                const devicePlatform = navigator.platform;
+                const deviceVendor = navigator.vendor || 'Unknown';
+                const deviceCookies = navigator.cookieEnabled ? 'Enabled' : 'Disabled';
+                const deviceJava = navigator.javaEnabled ? 'Enabled' : 'Disabled';
+                const screenResolution = `${window.screen.width}x${window.screen.height}`;
+                const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                
                 const ipResponse = await fetch('https://ipapi.co/json/');
                 const ipData = await ipResponse.json();
                 const ipAddress = ipData.ip;
                 const location = `${ipData.city}, ${ipData.region}, ${ipData.country_name}`;
                 
-                // Format message with device info for Telegram
-                const formattedMessage = `📩 *New Message from Website* 📩
-                
-✨ *Message:* 
+                // Format message with device info for Telegram (using the requested format)
+                const formattedMessage = `📩 <b>✨ #New_Message from Website ✨</b> 📩
+
+<blockquote>💌 Message:</blockquote>
+────────────────────────────
 ${message}
+────────────────────────────
 
-📱 *Device Info:*
-${deviceInfo}
+<blockquote>📊 Device Information:</blockquote>
+<blockquote>• 💻 Device ID: <code>${deviceId}</code></blockquote>
+<blockquote>• 📱 Device: <code>${deviceInfo}</code></blockquote>
+<blockquote>• 🖥 Platform: <code>${devicePlatform}</code></blockquote>
+<blockquote>• 🏷 Vendor: <code>${deviceVendor}</code></blockquote>
+<blockquote>• 🌐 Language: <code>${deviceLanguage}</code></blockquote>
+<blockquote>• 🍪 Cookies: <code>${deviceCookies}</code></blockquote>
+<blockquote>• ☕ Java: <code>${deviceJava}</code></blockquote>
+<blockquote>• 🖼 Screen: <code>${screenResolution}</code></blockquote>
+<blockquote>• ⏰ Time Zone: <code>${timeZone}</code></blockquote>
 
-🌐 *IP Address:* 
-${ipAddress}
+<blockquote>🌐 Network Information:</blockquote>
+<blockquote>• 🌍 IP Address: <code>${ipAddress}</code></blockquote>
+<blockquote>• 📍 Location: <code>${location}</code></blockquote>
 
-📍 *Location:* 
-${location}
-
-🕒 *Time:* ${new Date().toLocaleString()}`;
+🕒 Time: ${new Date().toLocaleString()}`;
 
                 // Send message to Telegram bot
                 const formData = new FormData();
                 formData.append('chat_id', ADMIN_ID);
                 formData.append('text', formattedMessage);
-                formData.append('parse_mode', 'Markdown');
+                formData.append('parse_mode', 'HTML');
                 
                 let response;
                 
@@ -703,8 +610,8 @@ ${location}
                 
                 // Reset form
                 this.reset();
-                document.getElementById('file-name').textContent = 'No file chosen';
-                document.getElementById('file-name-fa').textContent = 'هیچ فایلی انتخاب نشده';
+                document.getElementById('file-name').textContent = '⛔️ No file chosen ⛔️';
+                document.getElementById('file-name-fa').textContent = '⛔️ هیچ فایلی انتخاب نشده ⛔️';
                 document.getElementById('message-preview').textContent = 'Your message will appear here...';
                 document.getElementById('file-preview').innerHTML = '';
                 
@@ -719,4 +626,4 @@ ${location}
         });
     </script>
 </body>
-                          </html>
+</html>
